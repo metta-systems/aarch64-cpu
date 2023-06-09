@@ -142,6 +142,15 @@ register_bitfields! {u64,
             DisableTrapGeneralExceptionsToEl2 = 0,
             EnableTrapGeneralExceptionsToEl2 = 1,
         ],
+       
+        ///Traps SMC instruction. The values are:
+        ///     0    SMC instruction is not trapped.
+        ///     1    SMC instruction executed in EL1 is trapped to EL2 for AArch32 and AArch64 states.
+        ///
+        TSC   OFFSET(19) NUMBITS(1) [
+            DisableTrapSmcToEl2 = 0,
+            EnableTrapSmcToEl2 = 1,
+        ],
 
         /// Trap data or unified cache maintenance instructions that operate by Set/Way.
         /// Traps execution of those cache maintenance instructions at EL1 to EL2, when
